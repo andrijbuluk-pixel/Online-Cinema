@@ -2,15 +2,15 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    POSTGRES_USER: str = "POSTGRES_USER"
-    POSTGRES_PASSWORD: str = "POSTGRES_PASSWORD"
-    POSTGRES_HOST: str = "POSTGRES_HOST"
-    POSTGRES_DB_PORT: int = "POSTGRES_DB_PORT"
-    POSTGRES_DB: str = "POSTGRES_DB"
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
+    POSTGRES_HOST: str
+    POSTGRES_DB_PORT: int
+    POSTGRES_DB: str
 
-    SECRET_KEY_ACCESS: str = "SECRET_KEY_ACCESS"
-    SECRET_KEY_REFRESH: str = "SECRET_KEY_REFRESH"
-    JWT_SIGNING_ALGORITHM: str = "HS256"
+    SECRET_KEY_ACCESS: str
+    SECRET_KEY_REFRESH: str
+    JWT_SIGNING_ALGORITHM: str
 
     @property
     def database_url(self) -> str:
